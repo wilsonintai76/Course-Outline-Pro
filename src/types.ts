@@ -42,3 +42,9 @@ export interface CourseOutlineData {
 }
 
 export type Theme = 'crimson' | 'contrast' | 'slate' | 'amber';
+
+export interface OutlineMeta {
+  id: string;
+  courseName: string;
+  lastUpdated: string;
+}

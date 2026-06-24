@@ -1,6 +1,6 @@
 import { CourseOutlineData } from '../types';
 
-export function CourseOutlinePreview({ data }: { data: CourseOutlineData }) {
+export function CourseOutlinePreview({ data, globalLogo, institutionName }: { data: CourseOutlineData, globalLogo?: string, institutionName?: string }) {
   return (
     <div className="bg-white text-black p-4 md:p-8 shadow-xl max-w-4xl mx-auto font-sans text-sm border">
       <table className="w-full border-collapse border border-black mb-6 mt-4">
@@ -8,7 +8,9 @@ export function CourseOutlinePreview({ data }: { data: CourseOutlineData }) {
           <tr>
             <td colSpan={3} className="border border-black p-4 text-center font-bold">
               <div className="flex flex-col items-center justify-center">
-                 {data.logoUrl ? (
+                 {globalLogo ? (
+                  <img src={globalLogo} alt="Logo" className="h-16 mb-2 object-contain" />
+                ) : data.logoUrl ? (
                   <img src={data.logoUrl} alt="Logo" className="h-16 mb-2 object-contain" />
                 ) : (
                   <>
@@ -16,6 +18,10 @@ export function CourseOutlinePreview({ data }: { data: CourseOutlineData }) {
                     <h3 className="text-sm font-normal mb-2">MALAYSIA</h3>
                   </>
                 )}
+               <div className="flex-1">
+              <h1 className="text-2xl font-bold uppercase mb-1">{institutionName || data.institutionName || 'UNIVERSITY OF TECHNOLOGY'}</h1>
+              <h2 className="text-lg font-semibold uppercase text-zinc-600">{data.facultyName || 'Faculty / Department'}</h2>
+            </div>
                 <h4 className="mt-2 text-md font-bold uppercase">{data.departmentName}</h4>
                 <h4 className="text-md font-bold uppercase italic">COURSE OUTLINE</h4>
               </div>
