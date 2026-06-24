@@ -1,0 +1,6 @@
+{
+  "name": "Focus Notes",
+  "description": "A fully responsive, autosaving text editor with dark mode and data export capabilities. Backed by Firebase for seamless cloud data persistence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
